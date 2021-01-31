@@ -3,6 +3,7 @@ import './Content.css'
 
 import  'react-image-gallery/styles/css/image-gallery.css'
 
+/**content e gallery */
 import Devices2 from '../../assets/devices2.jpg'
 import Gallery from 'react-image-gallery'
 import Manutencao from '../../assets/manutencao.jpg'
@@ -12,7 +13,14 @@ import Tela from '../../assets/tela.jpg'
 import Script from '../../assets/script.jpg'
 import Desenvolvimento1 from '../../assets/desenvolvimento1.jpg'
 import Desenvolvimento2 from '../../assets/desenvolvimento2.jpg'
+import Profile from '../../assets/perfil.jpg'
 
+/**footer e redes sociais */
+import Facebook from '../../assets/facebook.png'
+import Instagram from '../../assets/instagram.png'
+import Twitter from '../../assets/twitter.jpg'
+import Whattzap from '../../assets/zap.png'
+import Email from '../../assets/mail-2.png'
 
 
   const images = [
@@ -43,6 +51,7 @@ import Desenvolvimento2 from '../../assets/desenvolvimento2.jpg'
     }
    ,{
                         original: Devices2 ,
+
                         thumbnail:'',
     }
 
@@ -118,12 +127,55 @@ export default class Content extends Component{
                             <div  className="ComponentContentContentMe">
                             <div className="componentMeCard">
                                     <h3 className="componentContentTitle" >Quem eu sou:</h3>
+                                    <img className="componentContentProfile" src={Profile} />
+                                    <div className="componentContentProfileDescriptionSkills">
+                                            <p className="componentContentProfileDescriptionSkillsText">
+                                                Olá a todos! Meu nome é <strong className="me">Leonardo Sousa.</strong>
+                                                Sou formado em Logística pela <strong className="university">Unijorge&copy;</strong>
+                                                e estou me pós-graduando em Engenharia de software para dispositivos móveis pela
+                                                <strong className="university">Uninter&copy;</strong>.
+                                                Sou profissional de manutenção em computadores a mais de 8 anos e possuo
+                                                experiência também no setor varejista de alimentos, o que me levou a escolha do curso de 
+                                                minha 1° graduação.
+                                                Trabalho com desenvolvimento de aplicativos e web sites como este,
+                                                que construi.
+                                                Possuo uma base sólida em fazer meus serviços fundamentados
+                                                em minha melhor performance, gerando aos meus clientes competitividade e desempenho com suas 
+                                                ferramentas. 
+                                            </p>
+                                    </div>
                                 </div>
                             </div>
                        </div>
 
                        <div className="componentContentFooter">
-                                <h4>footer aqui</h4>
+
+                                <div className="componentContentFooterContato">
+                                        <h4>Contato:</h4>
+                                        <div className="componentContentFooterContatoSocial-1">
+                                            <a  className="componentContentFooterContatoSocial-1">
+                                                 <img className="whattzap" src={Whattzap} />
+                                                 <p className="contactZap">Tel: (071) 98106-3448</p>
+                                            </a>
+                                               </div>
+                                        <div className="componentContentFooterContatoSocial-2">
+                                            <a className="componentContentFooterContatoSocial-2">
+                                                <img className="facebook" src={Facebook} />
+                                                <p className="contactFace">Leonardo Sousa</p>
+                                            </a>
+                                        </div>
+                                        <div className="componentContentFooterContatoSocial-3">
+                                                <a className="componentContentFooterContatoSocial-3">
+                                                    <img className="instagram" src={Instagram} />
+                                                    <p className="contactInsta">Leonardo Sousa</p>
+                                                </a>
+                                             </div>
+                                </div>
+
+                                
+                                <div className="componentContentFooterFormulario">
+                                        <h1>aqui</h1>
+                                </div>
                        </div>
 
                        <div className="componentContentCopy">

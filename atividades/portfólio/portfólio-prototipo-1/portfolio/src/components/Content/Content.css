@@ -35,7 +35,13 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-shadow: 1px 1px 1px #00bfff;
     color: rgba(0,0,0,0.3);
+   
+}
+.componentServiceCard{
     overflow: scroll;
+}
+.componentMeCard{
+    background: white;
 }
 .componentContentJobs{
     display: flex;
@@ -59,6 +65,28 @@ span{
     text-shadow: 1px 1px 1px black;
     font-size: large;
 }
+.componentContentProfileDescriptionSkillsText{
+    padding: 10px;
+    color: black;
+}
+.componentContentProfile{
+    max-width: 150px;
+    max-height: 150px;
+}
+.componentContentProfileDescriptionSkills{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: small;
+    margin: 3px 10px;
+    background: rgba(0,0,0,0.1);
+}
+.university, .me{
+    margin-right:2px ;
+    margin-left: 2px;
+    color: rgba(0,0,0,0.7);
+}
 /* não funciona pelo fato de o body 
 não ser a sua tag pai */
 .componentServiceCard{
@@ -79,11 +107,56 @@ e não está contido em nehum conteiner */
 .componentContentFooter{
     background: black;
     height: 300px;
-
+    color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.componentContentFooterContato{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.componentContentFooterContatoSocial-1,.componentContentFooterContatoSocial-2,.componentContentFooterContatoSocial-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.whattzap,.facebook,.instagram{
+    height: 60px;
+    width: 90px;
+}
+.facebook{
+    margin-top: 10px;
+    margin-left: 30px;
+    height: 40px;
+    width: 60px; 
+}
+.instagram{
+    height: 50px;
+    width: 70px; 
+    margin-left: 30px;
+}
+.contactZap,.contactFace,.contactInsta{
+    font-weight: 800;
+    margin-left: 10px;
+}
+.componentContentFooterFormulario{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }
 .componentContentCopy{
     background: black;
     color: whitesmoke;
+    padding: 10px;
 }
 .componentContentLittleDevices{
     display: none;
@@ -105,7 +178,7 @@ e não está contido em nehum conteiner */
         margin-top: 30px;
     }
 }
-@media(max-width:700px){
+@media(max-width:800px){
     .ComponentContentContent{
         display: flex;
         flex-direction: column;
