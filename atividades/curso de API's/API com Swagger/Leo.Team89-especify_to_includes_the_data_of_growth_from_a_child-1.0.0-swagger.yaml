@@ -1,0 +1,243 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: especify to includes the data of growth from a child
+  description: especify to includes the data of growth from a child
+  contact: 
+    email: leozin@outlook.com
+security:
+  - application:
+    - read
+    - write
+paths: 
+  /progress:
+    parameters:
+      - name: token
+        in: header
+        description: token JWT inside header
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: string
+        style: simple
+        example: >-
+          erfdd548eeef458easda4564adsfas45as45as
+    get:
+      sumary: recovery each progress
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/body-response'
+        400:
+          description: request data incorrect send
+        401:
+          description: invalid token, unexpected,finished
+        500:
+          description: server error
+    post:
+      sumary: create a new progress
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_request'
+      responses:
+        201:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/body-response'
+        400:
+          description: request data incorrect send
+        401:
+          description: invalid token, unexpected,finished
+        500:
+          description: server error
+  /progress/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: id of identify to progress
+        schema:
+          type: string
+      - name: token
+        in: header
+        description: token JWT inside header
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: string
+        style: simple
+        example: >
+          eyJ01456ukyiorlfdcoisdsfcvsdf
+        get:
+          sumary: recovery each progress by id
+          responses:
+            200:
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/body-response'
+            400:
+              description: request data incorrect send
+            401:
+              description: invalid token, unexpected,finished
+            404:
+              description: id resource not found
+            500:
+              description: server error
+        put:
+          sumary: update a progress by id
+          responses:
+           202:
+              description: accepted
+           400:
+              description: request data incorrect send
+           401:
+              description: invalid token, unexpected,finished
+           404:
+              description: resource {id} not found
+           500:
+              description: server error   
+        delete:
+          sumary: delete a progress by id
+          responses:
+           204:
+              description: no content
+           400:
+              description: request data incorrect send
+           401:
+              description: invalid token, unexpected,finished
+           404:
+              description: resource {id} not found
+           500:
+              description: server error  
+components:
+  schemas:
+    body_responses:
+      tpe: object
+      required: 
+        - id
+        - height
+        - weight
+        - headCircunference
+        - dateProgress
+        - acount
+      properties:
+        id:
+          type: integer
+          example: 1
+        height:
+          type: number
+          example: 1,03
+        weight:
+          type: number
+          example: 1,65
+        headCircunference:
+          type: number
+          example: 0,36
+        dateProgress:
+          type: string
+          format: date
+          example: 12/25/2021
+        account:
+          type: object
+          required: 
+             - firstName
+              - lastName
+              - email
+              - password
+              - dateBirth
+              - gender
+            properties:
+              firstName:
+                type: string
+                example: Leo
+              lastName:
+                type: string
+                example: sants
+              email:
+                type: string
+                format: email
+                example: me@gmail.com
+              password:
+                type: string
+                format: password
+                example: 123
+              dateBirth:
+                type: string
+                format: date
+                example: 10/12/2020
+              gender:
+                type: string
+                example: f
+                enum:
+                  - m
+                  - f
+    body_request:
+       tpe: object
+      required: 
+        - height
+        - weight
+        - headCircunference
+        - dateProgress
+        - acount
+      properties: 
+        height:
+          type: number
+          example: 1,03
+        weight:
+          type: number
+          example: 1,65
+        headCircunference:
+          type: number
+          example: 0,36
+        dateProgress:
+          type: string
+          format: date
+          example: 12/25/2021
+        account:
+          type: object
+          required: 
+             - firstName
+              - lastName
+              - email
+              - password
+              - dateBirth
+              - gender
+            properties:
+              firstName:
+                type: string
+                example: Leo
+              lastName:
+                type: string
+                example: sants
+              email:
+                type: string
+                format: email
+                example: me@gmail.com
+              password:
+                type: string
+                format: password
+                example: 123
+              dateBirth:
+                type: string
+                format: date
+                example: 10/12/2020
+              gender:
+                type: string
+                example: f
+                enum:
+                  - m
+                  - f

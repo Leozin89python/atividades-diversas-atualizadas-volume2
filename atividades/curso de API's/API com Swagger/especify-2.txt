@@ -1,0 +1,36 @@
+**what's the path?**
+response: /accounts GET
+response: /accounts  POST
+response: /accounts/(id) GET
+response: / accounts/(id)PUT
+response: /accounts/(id)DELETE
+
+**what's the parameter of request?**
+response: token JWD HEADER
+
+**what's the format of response?**
+response:  JSON
+
+**what's the format of request?**
+response:  JSON
+
+**what's the request body?**
+response: ID,mail,first name,lastName,dateBirth,phoneNumber,password,gender
+
+**what's the response body?**
+response: ID,mail,first name,lastName,dateBirth,phoneNumber,gender
+
+**what's the status response of success operation?**
+200 - ok
+
+**what's response from operation error on request?**
+400 - data request incorrect send
+
+**what's response from operation error of busisness rule?**
+401 - invalid token, unexpected,finished
+404 - id resource not found
+
+**what's response from operation error on server?**
+500 - server error
+
+

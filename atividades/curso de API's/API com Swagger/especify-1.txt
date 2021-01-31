@@ -1,0 +1,30 @@
+what's the path?
+response: login - post
+
+what's the parameter of request?
+response: 
+
+what's the format of response?
+response:  JSON
+
+what's the format of request?
+response:  JSON
+
+what's the request body?
+response: mail and password
+
+what's the response body?
+response: token,ID,mail,name,last name
+
+what's the status response of success operation?
+200 - ok
+
+what's response from operation error on request?
+400 - data request incorrect send
+
+what's response from operation error of busisness rule? 
+401 - incorrect password
+404 - user not found
+
+what's response from operation error on server?
+500 - server error

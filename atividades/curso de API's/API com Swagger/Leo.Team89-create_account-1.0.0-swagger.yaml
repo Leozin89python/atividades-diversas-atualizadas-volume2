@@ -1,0 +1,206 @@
+...
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: create account
+  description: create account
+  contact:
+    email: develop@gmail.com
+security: 
+  - application:
+    - read
+    - write
+paths: 
+  /accounts: 
+    parameters:
+      - name: token
+        in: header
+        description: token JWT inside header
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: string
+        style: simple
+        example: >
+          eyJ01456ukyiorlfdcoisdsfcvsdf
+    get:
+      sumary: recovery each account
+      response: 
+        200:
+          description: ok
+          content:
+            application/json:
+                schema:
+                  $ref:'#/components/schemas/body_response'
+          400:
+            description: request data incorrect send
+          401:
+            description: invalid token, unexpected,finished
+          500:
+            description: server error
+    post:
+      sumary: create a new account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_request'
+      responses: 
+        201: 
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref:'#/components/schemas/body_response'
+          400:
+            description: request data incorrect send
+          401:
+            description: invalid token, unexpected,finished
+          404:
+            description: id resource not found
+          500:
+            description: server error
+  /accounts/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: id of of auth in user account
+        schema:
+          type: string
+      - name: token
+        in: header
+        description: token JWT inside header
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: string
+        style: simple
+        example: >
+          eyJ01456ukyiorlfdcoisdsfcvsdf
+    get:
+      sumary: recovery a user account by id
+      responses:
+       200:
+          description: ok
+          content:
+            application/json:
+                schema:
+                  $ref:'#/components/schemas/body_response'
+          400:
+            description: request data incorrect send
+          401:
+            description: invalid token, unexpected,finished
+          404:
+            description: resource {id} not found
+          500:
+            description: server error
+    put:
+      sumary: update a user account by id
+      responses:
+       202:
+          description: accepted
+       400:
+          description: request data incorrect send
+       401:
+          description: invalid token, unexpected,finished
+       404:
+          description: resource {id} not found
+       500:
+          description: server error  
+    delete:
+      sumary: delete a user account by id
+      responses:
+       204:
+          description: no content
+       400:
+          description: request data incorrect send
+       401:
+          description: invalid token, unexpected,finished
+       404:
+          description: resource {id} not found
+       500:
+          description: server error
+  components:
+    schemas:
+      body_response:
+        type: object
+        required:
+          - id
+          - firstName
+          - lastName
+          - email
+          - phoneNumber
+          - dateBirth
+          - gender
+        properties:
+          id:
+            type: integer
+            example: 1
+          firstName:
+            type: string
+            example: Leo
+          lastName:
+            type: string
+            example: sants
+          email:
+            type: string
+            format: email
+            example: me@gmail.com
+          phoneNumber:
+            type: number
+            example: 5555-5555
+          dateBirth:
+            type: string
+            format: date
+            example: 10/12/2020
+          gender:
+            type: string
+            example: f
+            enum:
+              - m
+              - f
+      body_request: 
+        type: object
+        required:
+          - firstName
+          - lastName
+          - email
+          - phoneNumber
+          - password
+          - dateBirth
+          - gender
+        properties:
+          firstName:
+            type: string
+            example: Leo
+          lastName:
+            type: string
+            example: sants
+          email:
+            type: string
+            format: email
+            example: me@gmail.com
+          password:
+            type: string
+            format: password
+            example: 123
+          phoneNumber:
+            type: number
+            example: 5555-5555
+          dateBirth:
+            type: string
+            format: date
+            example: 10/12/2020
+          gender:
+            type: string
+            example: f
+            enum:
+              - m
+              - f
+...

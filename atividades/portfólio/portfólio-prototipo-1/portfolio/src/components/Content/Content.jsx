@@ -98,6 +98,20 @@ export default class Content extends Component{
                             <div className="ComponentContentContentServicos">
                                 <div className="componentServiceCard">
                                     <h3 className="componentContentTitle" >Serviços:</h3>
+
+                                        <div className="componentContentJobs">
+                                            <strong className="combo">combo:</strong> Formatação + Limpeza + Backup! de <del>180,00R$</del> por 150,00R$ 
+                                            <strong className="combo">combo:</strong> Formatação + Limpeza! de <del>150,00R$</del> por 120,00R$
+                                            <strong className="servico">Serviço:</strong> Formatação! de <del>100,00R$</del> por 80,00R$
+                                            <strong className="servico">Serviço:</strong>Orçamento! de <del>50,00R$</del> por 30,00R$ 
+                                            <strong className="servico">Serviço:</strong> Substituição de periférico (Peça/Componente)! de <del>70,00R$</del> por 50,00R$ + valor do componente
+                                            <strong className="servico">Serviço:</strong> Limpeza! de <del>70,00R$</del> por 50,00R$
+                                            <strong className="servico">Serviço:</strong> Backup! de <del>70,00R$</del> por 50,00R$
+                                            <strong className="servico">Serviço:</strong> Troca de tela! (Notebook somente *) de <del>120,00R$</del> por 60,00R$ + valor de tela nova
+                                            <strong className="servico">Serviço:</strong> Criação de site! A combinar!
+                                            <strong className="servico">Serviço:</strong> Criação de aplicativo! A combinar!
+                                            <strong className="combo">Combo:</strong>  Site + Aplicativo!  A combinar com <span>30% de desconto cada!</span>
+                                        </div>
                                 </div>
                             </div>
 
@@ -124,11 +138,19 @@ export default class Content extends Component{
                 </div>
 
                 
+
+
+
+
+
                 <div className="componentContentLittleDevices">
                     <h1>
                         little devices
                     </h1>
                 </div>
+
+
+
 
 
             </div>

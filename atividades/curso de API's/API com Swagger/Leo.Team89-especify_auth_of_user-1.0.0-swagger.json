@@ -1,0 +1,89 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "specify auth of user",
+    "description" : "specify auth of user",
+    "contact" : {
+      "email" : "leoTrainnin@gmail.com"
+    }
+  },
+  "path" : {
+    "/login" : {
+      "post" : {
+        "summary" : "login of user",
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : "$ref:'#/components/schemas/body_request'"
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : "$ref:'#/components/schemas/body_response'"
+              }
+            }
+          },
+          "400" : {
+            "description" : "data request incorrect send"
+          },
+          "401" : {
+            "description" : "incorrect password"
+          },
+          "404" : {
+            "description" : "user not found"
+          },
+          "500" : {
+            "description" : "server error"
+          }
+        }
+      }
+    },
+    "components" : {
+      "schemas" : {
+        "body_request" : {
+          "type" : "object",
+          "required" : [ "email", "password" ],
+          "properties" : {
+            "email" : {
+              "type" : "String",
+              "minimum" : 1,
+              "example" : "admin",
+              "format" : "email"
+            },
+            "password" : {
+              "type" : "String",
+              "minimun" : 1,
+              "example" : 123,
+              "format" : "password"
+            }
+          }
+        },
+        "body_response" : {
+          "type" : "object",
+          "required" : [ "token", "id", "email", "firstName", "lastName" ],
+          "properties" : {
+            "token" : {
+              "type" : "string",
+              "example" : "eyJ01456ukyiorlfdcoisdsfcvsdf"
+            }
+          },
+          "account" : {
+            "type" : "string",
+            "example" : {
+              "id" : 1,
+              "email" : "etudant@gmail.com",
+              "firstName" : "Leonard",
+              "lastName" : "Sants"
+            }
+          }
+        }
+      }
+    }
+  }
+}

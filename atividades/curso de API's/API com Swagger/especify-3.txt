@@ -1,0 +1,36 @@
+**what's the path?**
+response: /progress GET
+response: /progress   POST
+response: /progress/(id) GET
+response: /progress/(id)PUT
+response:  /progress/(id)DELETE
+
+**what's the parameter of request?**
+response: token JWD HEADER (id) progress PATH when is necesary
+
+**what's the format of response?**
+response:  JSON
+
+**what's the format of request?**
+response:  JSON
+
+**what's the request body?**
+response: ID,height,weight,dateProgress,headCircuference,accounts(ID,mail,first Name,lastName)
+
+**what's the response body?**
+response: ID,height,weight,dateProgress,headCircuference,accounts(ID,mail,first Name,lastName)
+
+**what's the status response of success operation?**
+200 - ok
+
+**what's response from operation error on request?**
+400 - data request incorrect send
+
+**what's response from operation error of busisness rule?**
+401 - invalid token, unexpected,finished
+404 - id resource not found
+
+**what's response from operation error on server?**
+500 - server error
+
+

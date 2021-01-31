@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: relatory to especify of growth from a child
+  description: relatory to especify of growth from a child
+  contact:
+    email: leozin@gmail.com
+security:
+  application:
+    - read
+    - write
+paths: 
+ /account/{mail}/progress:
+    parameters:
+      - name: token
+        in: header
+        description: token JWT inside header
+        required: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: string
+        style: simple
+        example: >-
+          erfdd548eeef458easda4564adsfas45as45as
+        get:
+          sumary: recovery progress of the growth of children by mail in account
+            responses:
+              200: 
+                description: OK
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/body_request'  
+              400:
+                description: request data incorrect send
+              401:
+                description: invalid token, unexpected,finished
+              404:
+                description: resource {email} not found
+             500:
+                description: server error  
+components:
+  schemas:
+        body_responses:
+          - height
+          - weight
+          - headCircunference
+          - dateProgress 
+      properties:
+      height:
+        type: number
+        example: 1,65
+      weight:
+        type: number
+        example: 2,35
+      headCircunference:
+        type: number
+        example: 0,58
+      dateProgress:
+        type: string
+        formate: date
+        example: 11/11/1997
+     body_request:
+      - height
+      - weight
+      - headCircunference
+      - dateProgress 
+  properties:
+  height:
+    type: number
+    example: 1,65
+  weight:
+    type: number
+    example: 2,35
+  headCircunference:
+    type: number
+    example: 0,58
+  dateProgress:
+    type: string
+    formate: date
+    example: 11/11/1997
