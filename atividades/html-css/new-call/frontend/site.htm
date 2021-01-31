@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>data&copy;</title>
+        <link rel="stylesheet" href="site.css">
+    </head>
+    <body>
+        <h1>Data Result</h1>
+
+        <button onclick="callHim(event)">data</button>
+        <button onclick="cal(event)">data</button>
+        <button type="submit" onclick="newCal(event)" id="txtbut">data</button>
+        <textarea name="area" id="text" cols="30" rows="10" onchange="txtbut"></textarea>
+        <button onclick="calll(event)">data</button>
+        <button onclick="newCall(event)">data</button>
+       
+        <script>
+            function callHim(e) {
+                e.preventDefault()
+
+                const url = '../backend/banco/db.json'
+
+                fetch(url)
+                    .then(res => {
+                      return  res.json()
+                     })
+                    .then(info =>{
+                        const element = info.reduce(
+                            (html,elements) => html + `<li>${elements.name}</li>`
+                        )
+                        document.body.insertAdjacentHTML('beforeend', `<ul>${element}</ul>`)
+
+                    })
+
+            }
+
+            
+
+            function cal(e)  {
+                        e.preventDefault(e)
+
+                        const url = '../backend/banco/db.json'
+
+                        fetch(url)
+                            .then(res => {
+                            return  res.json()
+                            })
+                            .then(info =>{
+                                const element = info.map(
+                                    elements =>elements.name
+                                )
+                               
+                                alert(element)
+                            })
+                 }
+
+                 
+                 
+            function calll(e)  {
+                        e.preventDefault(e)
+
+                        const url = '../backend/banco/db.json'
+
+                        fetch(url)
+                            .then(res => {
+                            return  res.json()
+                            })
+                            .then(info =>{
+                                const element = info.map(
+                                    elements => elements.name
+                                )
+                               
+                                console.log(element)
+                            })
+                 }
+
+
+                 function newCall(e)  {
+                        e.preventDefault(e)
+
+                        const url = '../backend/banco/db.json'
+
+                        fetch(url)
+                            .then(res => {
+                            return  res.json()
+                            })
+                            .then(info =>{
+                                const element = info.map(
+                                    elements => {
+                                        return elements.name
+                                    }
+                                )
+                               
+                                document.body.innerHTML = element
+                            })
+                 }
+
+                 
+                 function newCal(e){
+                    const url = '../backend/banco/db.json'
+
+                    fetch(url)
+                        .then(res =>{
+                            return res.json()
+                        })
+                        .then(info =>{
+                            const information = info.map(
+                                element => element.name
+                            )
+                           document.body.append(information)
+                        })
+                 }
+                
+             
+
+
+        </script>
+    </body>
+</html>
