@@ -106,7 +106,7 @@ e não está contido em nehum conteiner */
 }
 .componentContentFooter{
     background: black;
-    height: 300px;
+    height: 700px;
     color: whitesmoke;
     padding: 10px;
     display: flex;
@@ -121,42 +121,136 @@ e não está contido em nehum conteiner */
     flex-direction: column;
     width: 40%;
 }
-.componentContentFooterContatoSocial-1,.componentContentFooterContatoSocial-2,.componentContentFooterContatoSocial-3{
+.componentContentFooterContatoSocial-1,
+.componentContentFooterContatoSocial-2,
+.componentContentFooterContatoSocial-3,
+.componentContentFooterContatoSocial-4,
+.componentContentFooterContatoSocial-5,
+.componentContentFooterContatoSocial-6{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
     overflow: hidden;
-    margin-top: 10px;
+    margin-top: 5px;
+    color: whitesmoke;
+    text-decoration: none;
 }
-.whattzap,.facebook,.instagram{
-    height: 60px;
-    width: 90px;
+.whattzap{
+    height: 30px;
+    width: 60px;
+    margin-left: -20px; 
 }
 .facebook{
     margin-top: 10px;
-    margin-left: 30px;
+    height: 25px;
+    width: 40px; 
+}
+.instagram,.instagramTorre,.twitter{
     height: 40px;
-    width: 60px; 
+    width: 40px; 
 }
-.instagram{
-    height: 50px;
-    width: 70px; 
-    margin-left: 30px;
-}
-.contactZap,.contactFace,.contactInsta{
+.contactZap,.contactFace,.contactInsta,.contactTwitter{
     font-weight: 800;
     margin-left: 10px;
+    font-size: small;
+}
+.componentFooterTecnologias{
+    color: whitesmoke;
+    margin-top: 150px;
+}
+.componentFooterTecnologiasDescription{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    margin: 3px;
+}
+.tec{
+    border: black solid 1px;
+    background: whitesmoke;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
 }
 .componentContentFooterFormulario{
     display: flex;
     flex-direction: column;
     width: 60%;
 }
+.componentFooterName,.componentFooterFone,.componentFooterMail{
+    border: solid 1px black;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    background: white;
+    padding: 5px;
+}
+.CanetaImg,.FoneImg,.MailImg{
+    height: 50px;
+    width: 50px;
+}
+.put{
+    height: 100%;
+    width: 70%;
+    padding: 15px;
+    outline: none;
+    border: none;
+}
+.componentFooterText{
+    max-width: 80%;
+}
+.textContact{
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+}
+.componentFooterButtonAction{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    max-width: 82%;
+}
+.enviar,.limpar{
+    justify-self: end;
+    align-self: flex-end;
+    float: right;
+}
+.enviar{
+    background:linear-gradient(97deg, #00bfff 45%, #1e90ff 55%);
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    padding: 5px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.enviar:hover{
+    background:linear-gradient(97deg, #00ff00 45%, #32c232 55%);
+    color: rgba(0,0,0,0.7);
+}
+.limpar{
+    background:linear-gradient(97deg, #ff6347 45%, #ff0000 55%);
+    border: none;
+    outline: none;
+    padding: 5px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.limpar:hover{
+    color: rgba(0,0,0,0.7);
+}
 .componentContentCopy{
     background: black;
     color: whitesmoke;
     padding: 10px;
+}
+.meLinkedin{
+    margin-left: 3px;
+    text-decoration: none;
+    color: whitesmoke;
 }
 .componentContentLittleDevices{
     display: none;
@@ -167,10 +261,15 @@ e não está contido em nehum conteiner */
 
             /*    Àrea de Responsividade  */
 
-
-.componentContentLargerToSmallDevices{}
-
-.componentContentLittleDevices{}
+@media(max-width:700px){
+    .componentContentLargerToSmallDevices{
+        display: none;
+    }
+    .componentContentLittleDevices{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 @media(max-width:320px){
    
@@ -182,8 +281,22 @@ e não está contido em nehum conteiner */
     .ComponentContentContent{
         display: flex;
         flex-direction: column;
+        background: white;
     }
-    .ComponentContentContentServicos,.ComponentContentContentMe{
+   .ComponentContentContentServicos,.ComponentContentContentMe{
         width: 100%;
+        max-height: 40%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .componentContentFooterLittleDevices{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        background: black;
     }
 }
