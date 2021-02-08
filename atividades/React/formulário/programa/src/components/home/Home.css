@@ -1,0 +1,85 @@
+.link{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.linked{
+    color: whitesmoke;
+    padding: 1em;
+    margin-left: 2em;
+    background: linear-gradient(95deg ,  black 45%, rgba(0,0,0,0.4) 55%);
+}
+.formulárioConteiner{
+    margin: 7em  2em;
+}
+.formulário{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50% 50%;
+}
+.nome,.cargo,.empresa,.sexo,.tecnologias,.escolaridade{
+    margin: 3px 3px;
+    outline-style:none;
+    border: rgba(0,0,0,0.4) solid 2px;
+    padding: 0.7em;
+}
+.escolaridade:hover{
+    outline:solid darkblue 0.5px;
+}
+.cargo:hover{
+    outline:solid darkblue 0.5px;
+}
+.empresa:hover{
+    outline:solid darkblue 0.5px;
+}
+.sexo:hover{
+    outline:solid darkblue 0.5px;
+    cursor: pointer;
+}
+.tecnologias:hover{
+    outline:solid darkblue 0.5px;
+}
+.nome:hover{
+    outline:solid darkblue 0.5px;
+}
+.limpar,.enviar{
+    margin-top: 1em;
+    margin-right: 3em;
+    float: right;
+    padding: 0.5em;
+}
+.limpar{
+    outline: none;
+    border: none;
+    background: linear-gradient(95deg, darkred 45%, red 55%);
+    color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.limpar:hover{
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+.enviar{
+    outline: none;
+    border: none;
+    background: linear-gradient(95deg, darkblue 45%, blue 55%);
+    color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.enviar:hover{
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+footer{
+    font-size: small;
+    margin-top: 22em;
+    margin-left: 68%;
+    
+}
+
+@media(max-width:500px){
+    .formulário{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

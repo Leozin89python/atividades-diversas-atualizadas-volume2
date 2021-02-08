@@ -1,0 +1,12 @@
+	/*
+	
+	este formulário é
+	composto de 2 rotas e
+	um banco de dados!
+	
+	*/
+
+
+	tecnologias usadas:
+	React.js, firebase,
+	html5,css3

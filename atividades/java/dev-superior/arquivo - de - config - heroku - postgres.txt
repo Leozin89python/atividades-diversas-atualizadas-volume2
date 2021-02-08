@@ -1,0 +1,44 @@
+valores de conexão do heroku e Database
+(no meu caso postgres)
+
+*a url foi quebrada em todos estes valores abaixo*
+
+
+postgres://
+
+username:
+hpsfgyfwzswyzt
+
+:
+
+sign:
+c2e0a2bcdcd47244161ebdaa733d0f36856e978fcb4c386c44547397cf56a735
+
+@
+
+host/hostname:
+ec2-3-214-3-162.compute-1.amazonaws.com
+
+:
+
+standard port of postgres:
+5432
+
+/
+
+databasename:
+d8bqkl34oq2lf8
+
+
+
+/*abaixo esta a mesma url porém de forma
+integral/inteira*/
+
+
+
+
+/*url completa do heroku*/
+
+postgres://hpsfgyfwzswyzt:c2e0a2bcdcd47244161ebdaa733d0f36856e978fcb4c386c44547397cf56a735@ec2-3-214-3-162.compute-1.amazonaws.com:5432/d8bqkl34oq2lf8
+
+/*url completa do heroku*/
