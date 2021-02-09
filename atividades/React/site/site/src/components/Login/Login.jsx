@@ -23,20 +23,32 @@ export default class Login extends Component{
     
         this.logar  = this.logar.bind(this)
         this.enviar = this.enviar.bind(this)
+        this.limpar = this.limpar.bind(this)
       }
 
 
+  limpar = () =>{
+    this.setState({
+       email:'',
+       senha:'' 
+    })
+  } 
 
   logar = (e) =>{
 
     e.preventDefault()
   }    
 
-  enviar = () =>{
+  enviar = (e) =>{
     let cadastro = Db.database().ref('cadastro')
-    let chave = cadastro.push.key
+    let chave = cadastro.push().key
 
-    
+    cadastro.child(chave).set({
+      email:this.state.email,
+      senha:this.state.senha
+    })
+    this.limpar()
+    e.preventDefault()
   }
 
 
@@ -69,8 +81,8 @@ export default class Login extends Component{
                                   />
                                   <input className="putSenha" 
                                         placeholder=" digite sua senha..." 
-                                        type="text"
-                                        value={this.state.email}
+                                        type="password"
+                                        value={this.state.senha}
                                         />
                               </div>
 
@@ -116,6 +128,7 @@ export default class Login extends Component{
                                 placeholder=" digite um email..." 
                                 type="text"
                                 value={this.state.email}
+                                onChange={(email) => this.setState({email:email.target.value})}
                                 />
                       </div>
                     
@@ -125,8 +138,9 @@ export default class Login extends Component{
                           />
                           <input className="putSenha" 
                                 placeholder=" digite uma senha senha..." 
-                                type="text"
-                                value={this.state.email}
+                                type="password"
+                                value={this.state.senha}
+                                onChange={(senha) => this.setState({senha:senha.target.value})}
                                 />
                       </div>
 
@@ -136,12 +150,14 @@ export default class Login extends Component{
                           />
                           <input className="putSenha" 
                                 placeholder=" confirme sua senha..." 
-                                type="text"
-                                value={this.state.email}
+                                type="password"
+                                value={this.state.senha}
+                                onChange={(senha) => this.setState({senha:senha.target.value})}
                                 />
                       </div>
 
-                      <button className="enviar" onClick={this.logar}>Enviar</button>
+                      <button className="enviar" 
+                      onClick={this.enviar}>Enviar</button>
                 </form>
                 <button className="facaLogin"
                 value={this.state.estado}

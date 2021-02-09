@@ -3,7 +3,6 @@ import {Route,BrowserRouter,Switch} from 'react-router-dom'
 
 import Db from './components/Db/Db'
 
-import Cadastro from './components/Cadastro/Cadastro'
 import Login from './components/Login/Login'
 
 import Cabecalho from './components/Cabecalho/Cabecalho'
