@@ -1,0 +1,93 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+}
+.cardLogin, .cardCadastro{
+    height: 25em;
+    width: 20em;
+    margin-top: 10%;
+    margin-bottom: 50px;
+    border: solid 1px whitesmoke;
+    box-shadow: 1px 2px 1px rgba(0,0,0,0.1);
+
+    background: linear-gradient(95deg, #c0c0c0 45%, #dcdcdc 55% );
+    overflow: hidden;
+}
+.cardCadastro{
+    height: 28em;
+}
+.loginText,.CadastroText{
+    color: darkred;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cardEmail,.cardSenha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    overflow:hidden;
+    padding: 5px;
+
+    background: white;
+    margin: 0 10%;
+}
+.cardSenha{
+    margin-top: 5px;
+}
+.imgEmail,.imgSenha{
+    height: 30px;
+    width: 30px;
+}
+.putMail,.putSenha{
+   padding: 10px;
+   margin-top: 5px;
+   border: none;
+   outline: none;
+}
+.logar,.enviar{
+    margin-top: 20px;
+    width: 80%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    background: darkred;
+    color: white;
+
+    transition-property: background;
+    transition-duration: 1s;
+}
+.logar:hover{
+    background: blue;
+}
+.enviar:hover{
+    background: blue;
+}
+.cadastre-se,.facaLogin{
+    background: none;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    color: blue;
+    margin: 10px 0;
+}
+.visite{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+.face, .link, .insta{
+    height: 30px;
+    width: 30px;
+}

@@ -1,0 +1,8 @@
+.rodape{
+   position: fixed;
+   bottom: 0;
+   
+   color: whitesmoke;
+   background: black;
+   width: 100%;
+}

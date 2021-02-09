@@ -1,0 +1,9 @@
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    color: white;
+    background: linear-gradient(105deg , darkred 45%, red 55%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
